@@ -1,0 +1,9 @@
+@tailwind base;
+
+html {
+  @apply antialiased;
+}
+
+@tailwind components;
+
+@tailwind utilities;

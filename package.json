@@ -1,0 +1,60 @@
+{
+  "name": "dpyzo0o.io",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^1.6.19",
+    "@mdx-js/react": "^1.6.19",
+    "@tailwindcss/typography": "^0.2.0",
+    "gray-matter": "^4.0.2",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^8.0.0",
+    "next": "10.0.0",
+    "next-compose-plugins": "^2.2.0",
+    "next-optimized-images": "^2.6.2",
+    "prism-react-renderer": "^1.1.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "remark-autolink-headings": "^6.0.1",
+    "remark-slug": "^6.0.0",
+    "stringify-object": "^3.3.0",
+    "tailwindcss": "^1.9.6"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.5",
+    "@types/react": "^16.9.54",
+    "@types/webpack-env": "^1.15.3",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.0",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.5"
+  },
+  "postcss": {
+    "plugins": [
+      "tailwindcss"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "es5",
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{css,json,md,mdx,js,jsx,ts,tsx}": [
+      "prettier --write"
+    ]
+  }
+}

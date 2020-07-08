@@ -1,0 +1,31 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  .post-body p {
+    @apply text-justify;
+  }
+
+  .post-body a:hover {
+    @apply no-underline;
+  }
+
+  .post-body .heading {
+    @apply relative;
+  }
+
+  .post-body .heading .heading-anchor {
+    @apply ml-2 text-gray-500 opacity-0 no-underline;
+  }
+
+  .post-body .heading:hover > .heading-anchor {
+    @apply opacity-100;
+  }
+}

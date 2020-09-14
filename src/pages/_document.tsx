@@ -17,12 +17,18 @@ class InlineStylesHead extends Head {
   }
 
   __getInlineStyles() {
-    const { assetPrefix, files } = this.context._documentProps
-    if (!files || files.length === 0) {
-      return null
+    const { assetPrefix, buildManifest } = this.context
+
+    const files: string[] = []
+    for (const key of Object.keys(buildManifest.pages)) {
+      if (buildManifest.pages[key]) {
+        files.push(...buildManifest.pages[key])
+      }
     }
 
-    return files
+    const removeDuplicates = (arr: string[]) => [...new Set(arr)]
+
+    return removeDuplicates(files)
       .filter(file => /\.css$/.test(file))
       .map(file => (
         <style

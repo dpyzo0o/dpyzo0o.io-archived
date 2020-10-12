@@ -12,23 +12,10 @@ import path from 'path'
  * @reference https://github.com/vercel/next-plugins/issues/238#issuecomment-432211871
  */
 class InlineStylesHead extends Head {
-  getCssLinks() {
-    return this.__getInlineStyles()
-  }
+  getCssLinks: Head['getCssLinks'] = ({ allFiles }) => {
+    const { assetPrefix } = this.context
 
-  __getInlineStyles() {
-    const { assetPrefix, buildManifest } = this.context
-
-    const files: string[] = []
-    for (const key of Object.keys(buildManifest.pages)) {
-      if (buildManifest.pages[key]) {
-        files.push(...buildManifest.pages[key])
-      }
-    }
-
-    const removeDuplicates = (arr: string[]) => [...new Set(arr)]
-
-    return removeDuplicates(files)
+    return allFiles
       .filter(file => /\.css$/.test(file))
       .map(file => (
         <style

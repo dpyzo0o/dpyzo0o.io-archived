@@ -1,10 +1,9 @@
 export interface FrontMatter {
   title: string
-  description: string
-  date: Date
+  date: string
+  spoiler: string
 }
 
-export interface PostMeta {
-  title: string
-  link: string
+export interface PostMeta extends FrontMatter {
+  slug: string
 }

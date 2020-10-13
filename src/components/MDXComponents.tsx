@@ -1,5 +1,6 @@
 import { Components } from '@mdx-js/react'
 import CodeBlock from './CodeBlock'
+import Callout from './Callout'
 
 export default {
   h2: ({ children, ...props }) => (
@@ -14,4 +15,5 @@ export default {
   ),
   pre: props => props.children,
   code: CodeBlock,
+  Callout,
 } as Components

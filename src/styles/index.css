@@ -8,4 +8,20 @@
   html {
     @apply antialiased;
   }
+
+  .post-body p {
+    @apply text-justify;
+  }
+
+  .post-body a:hover {
+    @apply no-underline;
+  }
+
+  .post-body .anchor {
+    @apply ml-2 text-gray-500 opacity-0 no-underline;
+  }
+
+  .post-body span:hover > .anchor {
+    @apply opacity-100;
+  }
 }

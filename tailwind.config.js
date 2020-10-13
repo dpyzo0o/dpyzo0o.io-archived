@@ -2,13 +2,12 @@ module.exports = {
   future: {
     removeDeprecatedGapUtilities: true,
     purgeLayersByDefault: true,
+    defaultLineHeights: true,
+    standardFontWeights: true,
   },
   purge: {
     mode: 'all',
     content: ['./src/**/*.{ts,tsx}'],
-    options: {
-      whitelist: ['anchor'],
-    },
   },
   theme: {
     extend: {
@@ -26,27 +25,10 @@ module.exports = {
     typography: theme => ({
       default: {
         css: {
-          // shared by all modifiers
           a: {
-            '&:hover': {
-              textDecoration: 'none',
-            },
-            '&.anchor': {
-              marginLeft: theme('spacing.2'),
-              color: theme('colors.gray.500'),
-              opacity: '0',
-              textDecoration: 'none',
-            },
+            color: theme('colors.gray.900'),
+            fontWeight: '600',
           },
-          span: {
-            '&:hover > .anchor': {
-              opacity: '1',
-            },
-          },
-          p: {
-            textAlign: 'justify',
-          },
-          // only for this modifier
           pre: {
             marginTop: '0',
             marginBottom: '0',
@@ -58,8 +40,6 @@ module.exports = {
       sm: {
         css: {
           pre: {
-            marginTop: '0',
-            marginBottom: '0',
             paddingLeft: theme('spacing.4'),
             paddingRight: theme('spacing.4'),
           },
@@ -68,5 +48,5 @@ module.exports = {
     }),
   },
   variants: {},
-  plugins: [require('@tailwindcss/typography')({ modifiers: ['sm'] })],
+  plugins: [require('@tailwindcss/typography')],
 }

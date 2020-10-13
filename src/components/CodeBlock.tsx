@@ -1,3 +1,4 @@
+import React from 'react'
 import Highlight, { defaultProps } from 'prism-react-renderer'
 import githubTheme from 'prism-react-renderer/themes/github'
 import rangeParser from 'src/utils/parseNumericRange'
@@ -49,7 +50,7 @@ function CodeBlock(props: any) {
         }
 
         return (
-          <>
+          <React.Fragment>
             {codeBlockTitle && (
               <div className="bg-gray-400 rounded-t-md px-4 sm:px-6 py-1 sm:py-2 font-semibold">
                 {codeBlockTitle}
@@ -82,7 +83,7 @@ function CodeBlock(props: any) {
                 })}
               </pre>
             </div>
-          </>
+          </React.Fragment>
         )
       }}
     </Highlight>

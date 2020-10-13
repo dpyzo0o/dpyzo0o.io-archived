@@ -38,3 +38,6 @@ declare module '@mdx-js/react' {
   }
   export class MDXProvider extends React.Component<MDXProviderProps> {}
 }
+
+declare module 'next-mdx-remote/render-to-string'
+declare module 'next-mdx-remote/hydrate'

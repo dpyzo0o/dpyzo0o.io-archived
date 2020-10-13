@@ -1,12 +1,8 @@
 ---
 title: My Second Post!
-description: My Second Post
-date: 2015-05-06T23:46:37.121Z
+date: '2015-05-06'
+spoiler: Wow! I love blogging so much already.
 ---
-
-Wow! I love blogging so much already.
-
-<!--more-->
 
 Did you know that "despite its name, salted duck eggs can also be made from
 chicken eggs, though the taste and texture will be somewhat different, and the

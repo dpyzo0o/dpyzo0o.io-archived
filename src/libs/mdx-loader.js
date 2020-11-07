@@ -4,6 +4,10 @@ const stringifyObject = require('stringify-object')
 module.exports = function (src) {
   const { content, data: frontMatter } = matter(src)
 
+  if (!frontMatter.tags) {
+    frontMatter.tags = []
+  }
+
   const res = [
     `import Post from 'src/components/Post'`,
     content,

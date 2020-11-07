@@ -23,7 +23,13 @@ function Blog({ posts }: BlogProps) {
   return (
     <div className="container">
       {posts.map(({ link, frontMatter: { title, date, spoiler } }) => (
-        <PostPreview title={title} date={date} spoiler={spoiler} link={link} />
+        <PostPreview
+          key={link}
+          title={title}
+          date={date}
+          spoiler={spoiler}
+          link={link}
+        />
       ))}
     </div>
   )

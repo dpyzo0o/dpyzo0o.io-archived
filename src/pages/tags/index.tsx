@@ -27,15 +27,19 @@ function Tags({ tags }: TagsProps) {
     <div>
       <h1 className="text-4xl font-bold mb-8">Tags</h1>
       <div className="flex space-x-4 flex-wrap">
-        {tags.map(tag => (
-          <span
-            key={tag}
-            className="inline-block px-2 py-1 text-sm bg-gray-200 text-gray-600 rounded-sm cursor-pointer"
-            onClick={() => Router.push(`/tags/${tag}`)}
-          >
-            # {tag}
-          </span>
-        ))}
+        {tags.length > 0 ? (
+          tags.map(tag => (
+            <span
+              key={tag}
+              className="inline-block px-2 py-1 text-sm bg-gray-200 text-gray-600 rounded-sm cursor-pointer"
+              onClick={() => Router.push(`/tags/${tag}`)}
+            >
+              # {tag}
+            </span>
+          ))
+        ) : (
+          <span>No tags</span>
+        )}
       </div>
     </div>
   )

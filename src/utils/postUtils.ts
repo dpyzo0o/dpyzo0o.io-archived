@@ -15,6 +15,16 @@ export function getAllPosts(): PostInfo[] {
       const source = fs.readFileSync(filePath, { encoding: 'utf8' })
       const { data } = matter(source)
 
+      const frontMatter = data as FrontMatter
+
+      if (!frontMatter.spoiler) {
+        frontMatter.spoiler = ''
+      }
+
+      if (!frontMatter.tags) {
+        frontMatter.tags = []
+      }
+
       return {
         link: `/blog/${slug}`,
         frontMatter: data as FrontMatter,
